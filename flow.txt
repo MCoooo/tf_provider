@@ -1,0 +1,21 @@
+main.tf 
+	defines resources with vars
+	defines datasource with vars
+
+main calls provider
+provider
+	maps resource type to resource function
+	maps data sources to data source function
+	defines schema (vars used in type , e.g. username and password)
+resource
+	defines schema for resource
+	defines functions for crud
+		create 
+			gets what was defined in schema for resource e.g. items
+			does the create
+			sets d id with last update - e.g. order id
+			calls read
+		read
+			gets d id
+			tries to validte id is correct, e.g. get order with it
+			if ok d set with contents
